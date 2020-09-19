@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
+    <entity name="Author" representedClassName="Author" syncable="YES">
+        <attribute name="authorID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introduce" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="Book" representedClassName="Book" syncable="YES">
+        <attribute name="bookID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="detail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookDetail" syncable="YES"/>
+    </entity>
+    <entity name="BookCatalog" representedClassName="BookCatalog" syncable="YES">
+        <attribute name="catalogID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introduce" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bookDetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BookDetail" syncable="YES"/>
+    </entity>
+    <entity name="BookDetail" representedClassName="BookDetail" syncable="YES">
+        <attribute name="bookCataogID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bookPhoto" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="detailID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introduce" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishOraganization" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Author" syncable="YES"/>
+    </entity>
+    <entity name="BorrowDetail" representedClassName="BorrowDetail" syncable="YES">
+        <attribute name="bookID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="borrowedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="managerID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="readerID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Manager" representedClassName="Manager" syncable="YES">
+        <attribute name="managerID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="Reader" representedClassName="Reader" syncable="YES">
+        <attribute name="borrowedCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="college" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentClass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="maxBorrowCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="readerID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="shouldReturnCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="telePhone" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Manager" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Reader" positionX="-54" positionY="18" width="128" height="240"/>
+        <element name="Author" positionX="-36" positionY="117" width="128" height="120"/>
+        <element name="BookCatalog" positionX="-18" positionY="126" width="128" height="105"/>
+        <element name="BookDetail" positionX="0" positionY="135" width="128" height="150"/>
+        <element name="Book" positionX="18" positionY="162" width="128" height="90"/>
+        <element name="BorrowDetail" positionX="36" positionY="171" width="128" height="120"/>
+    </elements>
+</model>
